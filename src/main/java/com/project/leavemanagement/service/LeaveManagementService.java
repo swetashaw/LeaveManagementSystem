@@ -39,7 +39,7 @@ public class LeaveManagementService {
 	  @Autowired
 	  LeaveManageNativeSqlRepo lmNativeSqlRepo;
 	  
-	  
+	 //mapper injected 
 	 @Autowired
 	 Mapper mapper;
 	  
@@ -139,7 +139,7 @@ public class LeaveManagementService {
 	 * @param leaveReqDto
 	 * @return
 	 */
-	public LeaveRequest raiseLeaveRequestDirect(LeaveRequest leaveReqDto) {
+	public LeaveRequest requestLeave(LeaveRequest leaveReqDto) {
 		LeaveRequest leaveRequest=leaveReqRepository.save(leaveReqDto);
 		return leaveRequest;
 	}

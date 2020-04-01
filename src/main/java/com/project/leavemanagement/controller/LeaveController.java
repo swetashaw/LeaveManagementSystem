@@ -55,10 +55,10 @@ public class LeaveController {
 	 * @param leaveReqDto
 	 * @return
 	 */
-	@PostMapping("/sendleaverequests")	
+	@PostMapping("/requestleaves")	
     public ResponseEntity<LeaveRequest> raiseLeaveRequestDirect(@RequestBody  LeaveRequest leaveReqDto)
                                                  {
-		LeaveRequest leaveReqDtUupdated = leaveService.raiseLeaveRequestDirect(leaveReqDto);
+		LeaveRequest leaveReqDtUupdated = leaveService.requestLeave(leaveReqDto);
         return new ResponseEntity<LeaveRequest>(leaveReqDtUupdated, new HttpHeaders(), HttpStatus.CREATED);
     }
 	/**
@@ -90,7 +90,7 @@ public class LeaveController {
 	 * @param leaveReqDto
 	 * @return
 	 */
-	@PostMapping("/sendrequest")
+	@PostMapping("/sendleaverequest")
     public ResponseEntity<LeaveRequestDto> raiseLeaveRequest(@RequestBody LeaveRequestDto leaveReqDto)
                                                  {
 		LeaveRequestDto leaveReqDtUupdated = leaveService.raiseLeaveRequest(leaveReqDto);
